@@ -1,0 +1,16 @@
+common: &default_settings
+  license_key: <YOUR_LICENSE_KEY>
+  host: staging-collector.newrelic.com
+  enabled: true
+  app_name: "sentry_test (<%= ENV['USER'] %>)"
+  log_level: debug
+  log_file_path: stdout
+
+development:
+  <<: *default_settings
+test:
+  <<: *default_settings
+staging:
+  <<: *default_settings
+production:
+  <<: *default_settings
